@@ -11,7 +11,6 @@ public class RepoHandle {
     void postTest() {
         RestAssured
                 .given()
-                // .header("Authorization", "token " + TOKEN)
                 .auth()
                 .oauth2(TOKEN)
                 .body("{\"name\": \"deleteme\"")
