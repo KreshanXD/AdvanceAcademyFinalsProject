@@ -1,0 +1,5 @@
+not_an_email#,Email is invalid or already taken
+missing_at_symbol.com,Email is invalid or already taken
+too@many@atsymbols.com,Email is invalid or already taken
+no.domain@.com,Email is invalid
+missing_dot@examplecom,Email is invalid or already taken
