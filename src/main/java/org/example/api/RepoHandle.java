@@ -5,7 +5,7 @@ import org.testng.annotations.Test;
 
 public class RepoHandle {
     static final String REPO_EP = "https://api.github.com/user/repos";
-    static final String TOKEN = "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";
+    static final String TOKEN = "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";
 
     @Test(description = "Create a repositorie")
     void postTest() {
@@ -29,7 +29,7 @@ public class RepoHandle {
                 .oauth2(TOKEN)
                 .body("{\"name\": \"deleteme-patched\"}")
                 .when()
-                .patch("https://api.github.com/repos/GoshoQA/deleteme")
+                .patch("https://api.github.com/repos/KreshanXD/deleteme")
                 .then()
                 .statusCode(200);
     }
@@ -41,7 +41,7 @@ public class RepoHandle {
                 .auth()
                 .oauth2(TOKEN)
                 .when()
-                .delete("https://api.github.com/repos/GoshoQA/deleteme-patched")
+                .delete("https://api.github.com/repos/KreshanXD/deleteme-patched")
                 .then()
                 .statusCode(204);
     }
