@@ -5,7 +5,7 @@ import org.testng.annotations.Test;
 
 public class RepoHandle {
     static final String REPO_EP = "https://api.github.com/user/repos";
-    static final String TOKEN = "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";
+    static final String TOKEN = "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";
 
     @Test(description = "Create a repositorie")
     void postTest() {

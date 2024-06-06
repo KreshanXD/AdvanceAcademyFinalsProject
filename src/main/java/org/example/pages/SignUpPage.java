@@ -5,6 +5,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
+// Gathers all the elements we would use for each Sign-Up test in the project
+
 public class SignUpPage extends BasePage {
 
     @FindBy(xpath = "/html/body/div[1]/div[4]/main/div[1]/div[2]/div/div/div[2]/div[2]/form/div/button")
