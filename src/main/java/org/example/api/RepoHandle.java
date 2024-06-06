@@ -1,33 +1,46 @@
 package org.example.api;
 
 import io.restassured.RestAssured;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-// Create, change and delete a repository.
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.util.Properties;
 
 public class RepoHandle {
-    static final String REPO_EP = "https://api.github.com/user/repos";
-    static final String TOKEN = "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";
 
-    @Test(description = "Create a repositorie")
+    private static final String REPO_EP = "https://api.github.com/user/repos";
+    private static String token;
+
+    @BeforeClass
+    public void setup() throws IOException {
+        Properties properties = new Properties();
+        FileInputStream input = new FileInputStream("src/main/resources/config.properties");
+        properties.load(input);
+        token = properties.getProperty("TOKEN");
+        input.close();
+    }
+
+    @Test(description = "Create a repository")
     void postTest() {
         RestAssured
                 .given()
                 .auth()
-                .oauth2(TOKEN)
-                .body("{\"name\": \"deleteme\"")
+                .oauth2(token)
+                .body("{\"name\": \"deleteme\"}")
                 .when()
                 .post(REPO_EP)
                 .then()
                 .statusCode(201);
     }
 
-    @Test(description = "Update repositorie")
+    @Test(description = "Update repository")
     void patchTest() {
         RestAssured
                 .given()
                 .auth()
-                .oauth2(TOKEN)
+                .oauth2(token)
                 .body("{\"name\": \"deleteme-patched\"}")
                 .when()
                 .patch("https://api.github.com/repos/KreshanXD/deleteme")
@@ -35,12 +48,12 @@ public class RepoHandle {
                 .statusCode(200);
     }
 
-    @Test(description = "Delete repositorie")
+    @Test(description = "Delete repository")
     void deleteTest() {
         RestAssured
                 .given()
                 .auth()
-                .oauth2(TOKEN)
+                .oauth2(token)
                 .when()
                 .delete("https://api.github.com/repos/KreshanXD/deleteme-patched")
                 .then()

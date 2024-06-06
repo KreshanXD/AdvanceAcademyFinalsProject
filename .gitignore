@@ -12,6 +12,9 @@ target/
 *.iml
 *.ipr
 
+# Ignore properties files containing sensitive information
+config.properties
+
 ### Eclipse ###
 .apt_generated
 .classpath

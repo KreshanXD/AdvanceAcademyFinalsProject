@@ -36,7 +36,7 @@ public class BaseTest {
     }
 
     private void setupBrowserDriver() {
-        try (FileInputStream configFile = new FileInputStream("src/main/resources/setup.properties")) {
+        try (FileInputStream configFile = new FileInputStream("src/main/resources/config.properties")) {
             Properties config = new Properties();
             config.load(configFile);
             url = config.getProperty("urlAddress");

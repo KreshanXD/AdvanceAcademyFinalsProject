@@ -1,2 +1,0 @@
-"# AdvanceAcademyFinals" 
-"# AdvanceAcademyFinalsProject" 
