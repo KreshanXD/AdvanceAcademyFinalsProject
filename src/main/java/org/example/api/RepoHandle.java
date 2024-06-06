@@ -3,6 +3,8 @@ package org.example.api;
 import io.restassured.RestAssured;
 import org.testng.annotations.Test;
 
+// Create, change and delete a repository.
+
 public class RepoHandle {
     static final String REPO_EP = "https://api.github.com/user/repos";
     static final String TOKEN = "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";
@@ -20,7 +22,7 @@ public class RepoHandle {
                 .statusCode(201);
     }
 
-    @Test(description = "Update repositories")
+    @Test(description = "Update repositorie")
     void patchTest() {
         RestAssured
                 .given()
@@ -33,7 +35,7 @@ public class RepoHandle {
                 .statusCode(200);
     }
 
-    @Test(description = "Delete repositories")
+    @Test(description = "Delete repositorie")
     void deleteTest() {
         RestAssured
                 .given()
